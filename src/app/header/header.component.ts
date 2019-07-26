@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../menu.service';
+import { Link } from '../models/Link';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private menuService: MenuService;
+
+  constructor(menuService: MenuService) {
+    this.menuService = menuService;
+  }
 
   ngOnInit() {
+  }
+
+  private getClickedItemText(){
+    const link :Link = this.menuService.getClickedMenuItem();
+    if(link){
+      return link.getText();
+    }
+    return null;
   }
 
 }
