@@ -1,8 +1,10 @@
-<h2>Menu</h2>
-<ul>
-  <li *ngFor="let link of links">
-    <a href="{{link.getUrl()}}" 
-    (click)="setClickedItem(link, $event)">{{link.getText()}}</a>
-    
-  </li>
-</ul>
+<div class="inline-column">
+  <h2>Menu</h2>
+  <ul>
+    <li *ngFor="let link of links">
+      <a routerLink="/{{link.getUrl()}}" routerLinkActive="active"
+      (click)="setClickedItem(link, $event)">{{link.getText()}}</a>
+      
+    </li>
+  </ul>
+</div>

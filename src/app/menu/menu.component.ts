@@ -17,9 +17,11 @@ export class MenuComponent implements OnInit {
   }
 
   private links:Array<Link> = 
-  [    new Link("http://www.google.com", "Google"),  new Link("http://www.bing.com", "Bing"),
-    new Link("http://duckduckgo.com", "DuckDuckGo")
+[   new Link("/", "Home"),  
+    new Link("/shipment", "Shipment"),
+    new Link("/carrier", "Carrier")
    ];
+
   ngOnInit() {
   }
   public setClickedItem(itm: Link, event: Event){
